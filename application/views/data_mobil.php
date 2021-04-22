@@ -4,11 +4,11 @@
 	</div>
 	<div class="box-body">
 	<form action=" <?php echo base_url() ?>index.php/Welcome/Simpanmobil" method="POST">
-		Merek Mobil <input type="text" name="merek_mobil" class="form-control">
-		Nama Mobil <input type="text" name="nama_mobil" class="form-control">
-		Harga <input type="text" name="harga" class="form-control">
-		Stock <input type="text" name="stok" class="form-control">
-		Keterangan <input type="text" name="keterangan" class="form-control">
+		Merek Mobil <input type="text" placeholder="Merek Mobil" name="merek_mobil" class="form-control">
+		Nama Mobil <input type="text" placeholder="Nama Mobil" name="nama_mobil" class="form-control">
+		Harga <input type="text" placeholder="Harga" name="harga" class="form-control">
+		Stock <input type="text" placeholder="Stock" name="stok" class="form-control">
+		Keterangan <input type="text" placeholder="Keterangan" name="keterangan" class="form-control">
 		<br>
 		<button class="btn btn-primary btn-md pull-right fa fa-check " type="submit"> SIMPAN</button>
 	</form>

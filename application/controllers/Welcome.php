@@ -35,19 +35,8 @@ class Welcome extends CI_Controller {
 			redirect('Welcome/');
 		}
 	}
-	public function loginadmin()
-	{
-		$username=$this->input->post('username');
-		$password=$this->input->post('password');
-		$this->db->where('username', $username);
-		$this->db->where('password', $password);
-		$ketemu=$this->db->get('tbl_admin')->row_array();
-		if ($ketemu >0) {
-			redirect('Welcome/beranda2');
-		}else {
-			redirect('Welcome/admin');
-		}
-	}
+	
+
 	public function Beranda()
 	{
 		$this->load->view('beranda');
@@ -64,18 +53,9 @@ class Welcome extends CI_Controller {
 		$simpan=$this->Modeldata->Simpan_register();
 		redirect('Welcome/register');
 	}
-	public function admin()
-	{
-		$this->load->model('Modeldata');
-		$data['tbl_admin']		=$this->Modeldata->admin();
-		$this->load->view('admin',$data);
-	}
-	public function simpanadmin()
-	{
-		$this->load->model('Modeldata');
-		$simpan=$this->Modeldata->Simpan_admin();
-		redirect('Welcome/admin');
-	}
+
+
+
 	public function mobil()
 	{
 		$this->load->model('Modeldata');
@@ -118,6 +98,22 @@ class Welcome extends CI_Controller {
 		$this->Modeldata->Update_mobil($id_mobil,$merek_mobil,$nama_mobil,$harga,$stok,$keterangan);
 		redirect('Welcome/mobil');
 	}
+
+
+
+	public function customer()
+	{
+		$this->load->model('Modeldata');
+		$data['isicustomer']		=$this->Modeldata->isicustomer();
+		$this->load->view('beranda',$data);
+	}
+	public function Simpancustomer()
+	{
+		$this->load->model('Modeldata');
+		$simpan=$this->Modeldata->Simpan_customer();
+		redirect('Welcome/customer');
+	}
+	
 }
 
 	

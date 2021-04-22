@@ -333,7 +333,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
+            <i class="fa fa-user"></i>
             <span>ADMIN</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -350,36 +350,18 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
+            <i class="fa fa-users"></i>
             <span>CUSTOMER</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="<?php echo base_url() ?>index.php/Welcome/customer"><i class="fa fa-circle-o"></i>Isi Data Cstomer</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>Data Customer</a></li>
             <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
             <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
-        </li>
-
-
-        <li>
-          <a href="<?php echo base_url() ?>index.php/welcome/Transaksi">
-            <i class="fa "></i> <span></span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-
-
-        <li>
-          <a href="<?php echo base_url() ?>index.php/welcome/User">
-            <i class="fa "></i> <span></span>
-            <span class="pull-right-container">
-            </span>
-          </a>
         </li>
     <!-- /.sidebar -->
   </aside>
@@ -388,9 +370,13 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+      <ol class="breadcrumb">
+          <li><a href="<?php echo base_url() ?>index.php/Welcome/beranda"><i class="fa fa-dashboard"></i> Home</a></li>
+        </ol>
       <h1>
         <center><b>CAR</b>GARAGE</center>
       </h1>
+      
     </section>
     <!-- Main content -->
     <section class="content">
@@ -410,8 +396,8 @@
               case 'Transaksi':
                 echo "ini adalah halaman data transaksi";
               break;
-              case 'User':
-                  $this->load->view('data_user');
+              case 'customer':
+                $this->load->view('isi_customer');
               break;
               
               default:

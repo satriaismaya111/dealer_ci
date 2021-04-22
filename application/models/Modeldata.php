@@ -61,5 +61,23 @@ class Modeldata extends CI_Model {
 		$this->db->where('id_mobil',$id_mobil);
 		$this->db->update('tbl_mobil');
 	}
+
+
+
+	public function isicustomer()
+	{
+		return $this->db->get('tbl_customer')->result();
+	}
+	public function Simpan_customer()
+	{
+		$isidata=array(
+			'nama'			=>$this->input->post('nama',TRUE),
+			'alamat'		=>$this->input->post('alamat',TRUE),
+			'jk'			=>$this->input->post('jk',TRUE),
+			'no_telepon'	=>$this->input->post('no_telepon',TRUE),
+			'keterangan'	=>$this->input->post('keterangan',TRUE),
+		);
+		return $this->db->insert('tbl_customer',$isidata);
+	}
 }
 ?>
