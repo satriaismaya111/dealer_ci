@@ -357,7 +357,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url() ?>index.php/Welcome/customer"><i class="fa fa-circle-o"></i>Isi Data Cstomer</a></li>
+            <li><a href="<?php echo base_url() ?>index.php/Welcome/Isicustomer"><i class="fa fa-circle-o"></i>Isi Data Cstomer</a></li>
             <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>Data Customer</a></li>
             <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
             <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
@@ -390,14 +390,11 @@
               case 'Editmobil':
                 $this->load->view('edit_mobil');
               break;
-              case 'Customer':
-                $this->load->view('data_customer');
-              break;
-              case 'Transaksi':
-                echo "ini adalah halaman data transaksi";
+              case 'Isicustomer':
+                $this->load->view('isi_customer');
               break;
               case 'customer':
-                $this->load->view('isi_customer');
+                $this->load->view('data_customer');
               break;
               
               default:

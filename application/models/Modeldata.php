@@ -13,10 +13,6 @@ class Modeldata extends CI_Model {
 		);
 		return $this->db->insert('tbl_user',$isidata);
 	}
-	public function admin()
-	{
-		return $this->db->get('tbl_admin')->result();
-	}
 	public function datamobil()
 	{
 		return $this->db->get('tbl_mobil')->result();
@@ -78,6 +74,15 @@ class Modeldata extends CI_Model {
 			'keterangan'	=>$this->input->post('keterangan',TRUE),
 		);
 		return $this->db->insert('tbl_customer',$isidata);
+	}
+	public function datacustomer()
+	{
+		return $this->db->get('tbl_customer')->result();
+	}
+	public function get_id_customer($id)
+	{
+		$this->db->where('id_customer',$id);
+		return $this->db->get('tbl_customer')->row();
 	}
 }
 ?>

@@ -14,6 +14,33 @@
 	</form>
 	</div>
 </div>
+
+<div class="box">
+	<div class="box-header">
+		<h4>DATA CUSTOMER</h4>
+	</div>
+	<div class="box-body">
+		<table class="table table-bordered table-striped" id="example1">
+			<thead>
+				<td>ID Customer</td>
+				<td>Nama</td>
+				<td>Alamat</td>
+				<td>Jenis Kelamin</td>
+				<td>Nomor Telephone</td>
+				<td>Keterangan</td>
+			</thead>
+			<?php
+			foreach ($datacustomer as $tampilkan) {
+			 	echo "<tr>";
+			 		echo "<td>$tampilkan->id_customer</td>";
+			 		echo "<td>$tampilkan->nama</td>";
+			 		echo "<td>$tampilkan->alamat</td>";
+			 		echo "<td>$tampilkan->jk</td>";
+			 		echo "<td>$tampilkan->no_telepon</td>";
+			 		echo "<td>$tampilkan->keterangan</td>";
+			 	echo "</tr>";
+			 } 
+			?>
         <!-- /.modal -->
 
 

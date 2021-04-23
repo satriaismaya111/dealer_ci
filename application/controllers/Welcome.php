@@ -101,7 +101,7 @@ class Welcome extends CI_Controller {
 
 
 
-	public function customer()
+	public function Isicustomer()
 	{
 		$this->load->model('Modeldata');
 		$data['isicustomer']		=$this->Modeldata->isicustomer();
@@ -112,6 +112,12 @@ class Welcome extends CI_Controller {
 		$this->load->model('Modeldata');
 		$simpan=$this->Modeldata->Simpan_customer();
 		redirect('Welcome/customer');
+	}
+	public function Getidcustomer($id)
+	{
+		$this->load->model('Modeldata');
+		$data=$this->Modeldata->get_id_customer($id);
+		echo json_decode($data);
 	}
 	
 }
