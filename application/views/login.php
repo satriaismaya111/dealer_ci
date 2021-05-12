@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="../../index2.html"><b>Dealer</b>CI</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -50,7 +50,7 @@
           <div class="checkbox icheck">
             <a href="<?php echo base_url() ?>index.php/Welcome/register" class="text-center">Belum Punya Akun?</a>
             <br>
-            <a href="<?php echo base_url() ?>index.php/Welcome/admin" class="text-center">Login Sebagai Admin</a>
+            <a href="<?php echo base_url() ?>index.php/Welcome/admin" class="text-center"></a>
           </div>
         </div>
         <!-- /.col -->

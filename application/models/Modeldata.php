@@ -57,10 +57,14 @@ class Modeldata extends CI_Model {
 		$this->db->where('id_mobil',$id_mobil);
 		$this->db->update('tbl_mobil');
 	}
+	public function isimobil()
+	{
+		return $this->db->get('tbl_mobil')->result();
+	}
 
 
 
-	public function isicustomer()
+	public function datacustomer()
 	{
 		return $this->db->get('tbl_customer')->result();
 	}
@@ -75,14 +79,38 @@ class Modeldata extends CI_Model {
 		);
 		return $this->db->insert('tbl_customer',$isidata);
 	}
-	public function datacustomer()
-	{
-		return $this->db->get('tbl_customer')->result();
-	}
 	public function get_id_customer($id)
 	{
 		$this->db->where('id_customer',$id);
 		return $this->db->get('tbl_customer')->row();
+	}
+	public function hapus_customer()
+	{
+		$idmobil=$this->input->post('id_customer',TRUE);
+		$this->db->where('id_customer',$idcustomer);
+		$this->db->delete('tbl_customer');
+	}
+	public function get_id_customer_edit($id)
+	{
+		$this->db->where('id_customer',$id);
+		return $this->db->get('tbl_customer')->result();
+	}
+	public function Update_customer($id_customer,$nama,$alamat,$jk,$no_telepon,$keterangan)
+	{
+		$isidata=array(
+			'nama'			=>$nama,
+			'alamat'		=>$alamat,
+			'jk'			=>$jk,
+			'no_telepon'	=>$no_telepon,
+			'keterangan'	=>$keterangan,
+		);
+		$this->db->set($isidata);
+		$this->db->where('id_customer',$id_customer);
+		$this->db->update('tbl_customer');
+	}
+	public function isicustomer()
+	{
+		return $this->db->get('tbl_customer')->result();
 	}
 }
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Apr 2021 pada 05.51
+-- Waktu pembuatan: 10 Bulan Mei 2021 pada 14.15
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.9
 
@@ -42,7 +42,8 @@ CREATE TABLE `tbl_customer` (
 
 INSERT INTO `tbl_customer` (`id_customer`, `nama`, `alamat`, `jk`, `no_telepon`, `keterangan`) VALUES
 (1, 'udin', 'langensari', 'pria', 854768657, 'ya'),
-(2, 'deni', 'kxjsox', 'cwk', 987637802, 'good');
+(2, 'deni', 'kxjsox', 'cwk', 987637802, 'good'),
+(3, 'satria', 'japan, hiroshima', 'Pria', 89, 'baik');
 
 -- --------------------------------------------------------
 
@@ -64,8 +65,10 @@ CREATE TABLE `tbl_mobil` (
 --
 
 INSERT INTO `tbl_mobil` (`id_mobil`, `merek_mobil`, `nama_mobil`, `harga`, `stok`, `keterangan`) VALUES
-(2, 'Honda', 'Avanza', '10000', 2, 'good'),
-(3, 'Honda', 'Avanza', '100.000.000,00', 3, 'good');
+(2, 'Honda', 'Avanza', '100001111', 2, 'good'),
+(3, 'Honda', 'Avanza', '100.000.000,00', 3, 'good'),
+(4, 'Toyota', 'Xenia', '100.000.000,00', 4, 'baru'),
+(5, 'Toyota', 'Alphard', '1.000.000.000,00', 1, 'Baik');
 
 -- --------------------------------------------------------
 
@@ -123,13 +126,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT untuk tabel `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_mobil`
 --
 ALTER TABLE `tbl_mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_user`

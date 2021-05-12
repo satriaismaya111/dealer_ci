@@ -31,11 +31,11 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <h1><b>Admin</b>LTE</a><h1>
+    <h1><b>Dealer</b>CI</a><h1>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">Silahkan Buat Akun Untuk Akses Aplikasi!</p>
 
     <form action="<?php echo base_url() ?>index.php/welcome/Simpanregister/login" method="post">
       <div class="form-group has-feedback">

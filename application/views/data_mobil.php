@@ -1,25 +1,17 @@
-<div class="box">
-	<div class="box-header">
-		Form input Data Mobil
-	</div>
-	<div class="box-body">
-	<form action=" <?php echo base_url() ?>index.php/Welcome/Simpanmobil" method="POST">
-		Merek Mobil <input type="text" placeholder="Merek Mobil" name="merek_mobil" class="form-control">
-		Nama Mobil <input type="text" placeholder="Nama Mobil" name="nama_mobil" class="form-control">
-		Harga <input type="text" placeholder="Harga" name="harga" class="form-control">
-		Stock <input type="text" placeholder="Stock" name="stok" class="form-control">
-		Keterangan <input type="text" placeholder="Keterangan" name="keterangan" class="form-control">
-		<br>
-		<button class="btn btn-primary btn-md pull-right fa fa-check " type="submit"> SIMPAN</button>
-	</form>
-	</div>
-</div>
 
 <div class="box">
 	<div class="box-header">
 		<h4>DATA MOBIL</h4>
 	</div>
+
 	<div class="box-body">
+        <div class="mr-2">
+            <a href="<?php echo base_url() ?>index.php/Welcome/Isimobil">
+                <button class="btn btn-primary btn-sm pull-right">
+                    <i class="fa fa-plus"></i>Tambah data 
+                </button>
+            </a>
+      </div>
 		<table class="table table-bordered table-striped" id="example1">
 			<thead>
 				<td>ID Mobil</td>
@@ -57,18 +49,21 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Warning!!!</h4>
-              </div>
-              <div class="modal-body">
-              	<form action="<?php echo base_url() ?>index.php/Welcome/Hapusmobil" class="form-horizontal" id="form_hapus" method="POST">
-                <input type="hidden" name="id_mobil" value="">
-                <p>Menghapus Akan Menghilangkan Data Secara Permanen&hellip;</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">CANCEL</button>
-                <button type="button" class="btn btn-outline">YES</button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Pesan Hapus Data</h4>
+            </div>
+            <div class="modal-body">
+              <form action="<?php echo base_url() ?>index.php/Welcome/Hapusmobil" class="form-horizontal" id="form_hapus" method="POST">
+                <input type="text" name="id_mobil" value="">
+                <p>
+                  Apakah Anda Ingin Menghapus Data Ini?
+                </p>
+                <button type="button" class="btn btn-warning pull-left" data-dismiss="modal"><li class="fa fa-undo"></li>Batal</button>
+                <button type="submit" class="btn btn-danger pull-right"><li class="fa fa-check"></li>YA</button>
+              </form>
+            </div>
               </div>
             </div>
             <!-- /.modal-content -->

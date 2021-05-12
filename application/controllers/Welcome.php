@@ -98,13 +98,18 @@ class Welcome extends CI_Controller {
 		$this->Modeldata->Update_mobil($id_mobil,$merek_mobil,$nama_mobil,$harga,$stok,$keterangan);
 		redirect('Welcome/mobil');
 	}
-
-
-
-	public function Isicustomer()
+	public function Isimobil()
 	{
 		$this->load->model('Modeldata');
-		$data['isicustomer']		=$this->Modeldata->isicustomer();
+		$data['isimobil']		=$this->Modeldata->isimobil();
+		$this->load->view('beranda',$data);
+	}
+
+
+	public function customer()
+	{
+		$this->load->model('Modeldata');
+		$data['datacustomer']		=$this->Modeldata->datacustomer();
 		$this->load->view('beranda',$data);
 	}
 	public function Simpancustomer()
@@ -118,6 +123,36 @@ class Welcome extends CI_Controller {
 		$this->load->model('Modeldata');
 		$data=$this->Modeldata->get_id_customer($id);
 		echo json_decode($data);
+	}
+	public function hapuscustomer()
+	{
+		$this->load->model('Modeldata');
+		$simpan=$this->Modeldata->hapus_customer();
+		redirect('Welcome/customer');
+	}
+	public function Editcustomer($idcustomer=null)
+	{
+		$this->load->model('Modeldata');
+		$data['get_id_customer']		=$this->Modeldata->get_id_customer_edit($idcustomer);
+		$this->load->view('beranda',$data);
+	}
+	public function Updatecustomer()
+	{
+		$id_customer =$this->input->post('id_customer', TRUE);
+		$nama =$this->input->post('nama', TRUE);
+		$alamat =$this->input->post('alamat', TRUE);
+		$jk =$this->input->post('jk', TRUE);
+		$no_telepon =$this->input->post('no_telepon', TRUE);
+		$keterangan =$this->input->post('keterangan', TRUE);
+		$this->load->model('Modeldata');
+		$this->Modeldata->Update_customer($id_customer,$nama,$alamat,$jk,$no_telepon,$keterangan);
+		redirect('Welcome/customer');
+	}
+	public function Isicustomer()
+	{
+		$this->load->model('Modeldata');
+		$data['isicustomer']		=$this->Modeldata->isicustomer();
+		$this->load->view('beranda',$data);
 	}
 	
 }

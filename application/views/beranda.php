@@ -141,12 +141,7 @@
           </li>
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
-            </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
@@ -188,7 +183,7 @@
               <span class="label label-danger">9</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
+              
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
@@ -267,36 +262,11 @@
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
-              <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+              
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="<?php echo base_url() ?>index.php/welcome/halamanadmin" class="btn btn-default btn-flat">Sign out</a>
+                <div class="account-dropdown">
+                  <a onclick="return confirm('anda ingin logout?')" href="<?php echo base_url() ?>index.php/Welcome/login" class="btn btn-block btn-primary btn-flat"><i class="fa fa-sign-out">Sign out</i></a>
                 </div>
               </li>
             </ul>
@@ -314,15 +284,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="<?php echo base_url() ?>assets/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Satria</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
+  
       <!-- search form -->
     
       <!-- /.search form -->
@@ -331,38 +293,41 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview"></li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i>
-            <span>ADMIN</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li>
+          <a href="<?php echo base_url() ?>index.php/Welcome/beranda">
+            <i class="fa fa-home"></i> <span>HOME
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url() ?>index.php/Welcome/mobil"><i class="fa fa-circle-o"></i> Data Mobil</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-          </ul>
         </li>
 
+        <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MASTER MOBIL</li>
+        <li class="active treeview"></li>
 
-        <li class="treeview">
-          <a href="#">
+      <li>
+          <a href="<?php echo base_url() ?>index.php/Welcome/mobil">
+            <i class="fa fa-automobile"></i>
+            <span>Data Mobil</span>
+        </a>
+      </li>
+
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MASTER PESANAN</li>
+        <li class="active treeview"></li>
+
+      <li>
+          <a href="<?php echo base_url() ?>index.php/Welcome/customer">
             <i class="fa fa-users"></i>
-            <span>CUSTOMER</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url() ?>index.php/Welcome/Isicustomer"><i class="fa fa-circle-o"></i>Isi Data Cstomer</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>Data Customer</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-          </ul>
-        </li>
+            <span>DATA CUSTOMER</span>
+        </a>
+      </li>
+
+      <li>
+          <a href="<?php echo base_url() ?>index.php/Welcome/mobil">
+            <i class="fa fa-shopping-cart"></i>
+            <span>DATA PESANAN</span>
+        </a>
+      </li>
+
     <!-- /.sidebar -->
   </aside>
 
@@ -390,15 +355,21 @@
               case 'Editmobil':
                 $this->load->view('edit_mobil');
               break;
-              case 'Isicustomer':
-                $this->load->view('isi_customer');
+              case 'Isimobil':
+                $this->load->view('isi_mobil');
               break;
               case 'customer':
                 $this->load->view('data_customer');
               break;
+              case 'Editcustomer':
+                $this->load->view('edit_customer');
+              break;
+              case 'Isicustomer':
+                $this->load->view('isi_customer');
+              break;
               
               default:
-                echo "";
+                $this->load->view('dashboard');
               break;
             }
          ?>
